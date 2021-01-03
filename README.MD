@@ -20,3 +20,12 @@ servers = [
 - s-2vcpu-4gb
 - s-4vcpu-8gb
 - s-8vcpu-16gb
+
+# Check for this in the Jenkins output file
+```
+Outputs:
+
+ips = [
+  "159.65.9.102",
+]
+```
