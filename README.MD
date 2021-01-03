@@ -7,8 +7,16 @@ Example,
 ```terraform
 servers = [
     {
-        name = "",
-        type = ""
+        name = "server-1",
+        type = "s-1vcpu-1gb"
     }
 ]
 ```
+
+# Server Types
+- s-1vcpu-1gb
+- s-1vcpu-2gb
+- s-2vcpu-2gb
+- s-2vcpu-4gb
+- s-4vcpu-8gb
+- s-8vcpu-16gb
