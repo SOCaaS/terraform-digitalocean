@@ -13,7 +13,7 @@ pipeline {
                 echo 'Terraform Migration....'
                 sh 'terraform --version'
                 sh 'terraform init'
-                sh 'terraform plan'
+                sh 'terraform plan  -var-file=/root/tfvars/digitalocean.tfvars'
                 sh 'terraform apply -var-file=/root/tfvars/digitalocean.tfvars --auto-approve'
                 sh 'ls -la /root/tfstate/'
                 echo 'Finished'
