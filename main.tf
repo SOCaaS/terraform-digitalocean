@@ -5,7 +5,7 @@ terraform {
 }
 
 module "digitalocean" {
-    source              = "droplet"
+    source              = "./droplet"
     servers             = []
     digital_ocean_key   = var.digital_ocean_key
 }
