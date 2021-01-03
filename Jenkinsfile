@@ -6,12 +6,16 @@ pipeline {
                 docker {
                     image 'base/terraform:latest'
                     args  '-v /root/tfstate/:/root/tfstate/'
+                    args  '-v /root/tfvars/:/root/tfvars/'
                 }
             }
             steps {
                 echo 'Terraform Migration....'
                 sh 'terraform --version'
-                sh 'ls /root/tfstate/'
+                sh 'terraform plan'
+                sh 'terraform init'
+                sh 'terraform apply -var-file=/root/tfvars/digitalocean.tfvars --auto-approve'
+                sh 'ls -la /root/tfstate/'
                 echo 'Finished'
             }
         }
