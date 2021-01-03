@@ -5,8 +5,7 @@ pipeline {
             agent {
                 docker {
                     image 'base/terraform:latest'
-                    args  '-v /root/tfstate:/root/tfstate'
-                    args  '-v /root/tfvars:/root/tfvars'
+                    args  '-v /root/tfstate:/root/tfstate -v /root/tfvars:/root/tfvars'
                 }
             }
             steps {
