@@ -11,10 +11,10 @@ module "digitalocean" {
 #             name = "server-1",
 #             type = "s-1vcpu-1gb"
 #         },
-#         {
-#             name = "server-2",
-#             type = "s-1vcpu-1gb"
-#         }
+          {
+             name = "server-2",
+             type = "s-1vcpu-1gb"
+          }
     ]
     digital_ocean_key   = var.digital_ocean_key
 }
