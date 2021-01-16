@@ -4,7 +4,7 @@ data "digitalocean_ssh_key" "ssh_key_id" {
 
 resource "digitalocean_droplet" "server" {
   count             = length(var.servers)
-  image             = "ubuntu-20-04-x64"
+  image             = "ubuntu-16-04-x64"
   name              = var.servers[count.index]["name"]
   region            = "sgp1"
   size              = var.servers[count.index]["type"]
