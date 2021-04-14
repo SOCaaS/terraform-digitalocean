@@ -7,10 +7,10 @@ terraform {
 module "digitalocean" {
     source              = "./droplet"
     servers             = [
-          #  {
-          #  name = "digitalocean",
-          #   type = "s-2vcpu-4gb"
-          #  }
+            {
+            name = "digitalocean",
+             type = "s-2vcpu-4gb"
+            }
           #  ,
           #  {
           #    name = "server-1",
