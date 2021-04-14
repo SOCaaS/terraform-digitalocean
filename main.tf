@@ -11,11 +11,11 @@ module "digitalocean" {
             name = "digitalocean",
              type = "s-2vcpu-4gb"
             }
-          #  ,
-          #  {
-          #    name = "server-1",
-          #    type = "s-2vcpu-4gb"
-          #  }
+            ,
+            {
+              name = "server-1",
+              type = "s-2vcpu-4gb"
+            }
           #   ,
           #  {
           #   name = "server-2",
