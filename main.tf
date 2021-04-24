@@ -16,16 +16,16 @@ module "digitalocean" {
              name = "server-1",
              type = "s-2vcpu-4gb"
            }
-             ,
-            {
-             name = "server-2",
-             type = "s-2vcpu-4gb"
-            }
-             ,
-            {
-             name = "server-3",
-             type = "s-2vcpu-4gb"
-            }
+            #  ,
+            # {
+            #  name = "server-2",
+            #  type = "s-2vcpu-4gb"
+            # }
+            #  ,
+            # {
+            #  name = "server-3",
+            #  type = "s-2vcpu-4gb"
+            # }
     ]
     digital_ocean_key   = var.digital_ocean_key
 }
