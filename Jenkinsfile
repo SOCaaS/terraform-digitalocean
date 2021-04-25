@@ -20,13 +20,13 @@ pipeline {
                 sh 'terraform show'
                 echo 'Finished'
                 
-                discordSend description: "Server Deploy", footer: "Server-Deploy-CI/CD Success", notes: "Server IP ${sh(returnStdout: true, script: 'cat /root/tfstate/digital-ocean-servers.tfstate | jq \'.["outputs"]["ips"]["value"]\'')}",  link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: env.SOCAAS_WEBHOOK
+                discordSend description: "Server SUCCESS to Deploy/Destroy", footer: "Server-Deploy-CI/CD Success", notes: "Server IP ${sh(returnStdout: true, script: 'cat /root/tfstate/digital-ocean-servers.tfstate | jq \'.["outputs"]["ips"]["value"]\'')}",  link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: env.SOCAAS_WEBHOOK
             }
         }
     }
     post {
         failure {
-            discordSend description: "Server Deploy", footer: "Server-Deploy-CI/CD Failed", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: env.SOCAAS_WEBHOOK
+            discordSend description: "Server FAILED to Deploy/Destroy", footer: "Server-Deploy-CI/CD Failed", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: env.SOCAAS_WEBHOOK
         }
     }  
 }
