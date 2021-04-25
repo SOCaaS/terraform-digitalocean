@@ -26,7 +26,7 @@ pipeline {
     }
     post {
         failure {
-            discordSend description: "Server FAILED to Deploy/Destroy", footer: "Server-Deploy-CI/CD Failed", notes: "Log: ${currentBuild.rawBuild.getLog(20)}", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: env.SOCAAS_WEBHOOK
+            discordSend description: "Server FAILED to Deploy/Destroy", footer: "Server-Deploy-CI/CD Failed", notes: "Github Link : https://github.com/socaas/terraform-digitalocean.git", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: env.SOCAAS_WEBHOOK
         }
     }  
 }
